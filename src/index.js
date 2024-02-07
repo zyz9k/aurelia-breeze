@@ -6,6 +6,7 @@ import {BreezeObservationAdapter} from './observation-adapter';
 import {AjaxAdapter} from './ajax-adapter'; //eslint-disable-line no-unused-vars
 
 export function configure(frameworkConfig) {
+  debugger;
   // ensure breeze is using the modelLibrary backing store (vs Knockout or Backbone)
   breeze.config.initializeAdapterInstance('modelLibrary', 'backingStore');
 
