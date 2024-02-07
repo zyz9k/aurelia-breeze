@@ -1,6 +1,6 @@
 import breeze from 'breeze-client';
 
-const extend = breeze.core.extend;
+
 
 export class HttpResponse {
   constructor(status, data, headers, config) {
@@ -76,13 +76,13 @@ export class AjaxAdapter {
     // build the request info object.
     let requestInfo = {
       adapter: this,
-      config: extend({}, config),
+      config: {...{}, ...config},
       zConfig: config,
       success: config.success,
       error: config.error
     };
     requestInfo.config.request = this.httpClient;
-    requestInfo.config.headers = extend({}, config.headers);
+    requestInfo.config.headers = {...{}, ...config.headers};
 
     // submit the request-info for interception.
     if (breeze.core.isFunction(this.requestInterceptor)) {
